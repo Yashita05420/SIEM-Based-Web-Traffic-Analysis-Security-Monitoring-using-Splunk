@@ -4,3 +4,4 @@
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/e43c82b75f73a5f94ebce81f95d56eaffd41a996/Screenshot%20(123).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/770b5816244bcbcf49d465849e0a9a12a77ab78f/Screenshot%20(124).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/27003cb4f0b1454ce0461b1d7c5c8d650b020121/Screenshot%20(125).png)
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
