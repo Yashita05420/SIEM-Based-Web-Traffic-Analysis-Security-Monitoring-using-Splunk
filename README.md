@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/df086259-c54e-4265-ba5b-44ccbb7cef31" /># SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk
+# SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk
 
 
 ## Overview:
