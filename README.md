@@ -1,20 +1,20 @@
 # SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk
 
 
-## Overview:
+# Overview:
 This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
-## Objective:
+# Objective:
 1. Monitor web traffic in real-time
 2. Detect suspicious IP activity
 3. Identify brute-force and anomaly patterns
 4. Visualize security insights using dashboards
 
-## Tool Used:
+# Tool Used:
 1. Splunk
 2. file : "apache_logs.json"
 
-## Dashboard Features:
+# Dashboard Features:
 1. Total Web Requests.
 2. Successful Responses.
 3. client Error.
@@ -24,8 +24,8 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 7. Web Traffice by Client IP Address.
 
 
-## steps :
-1. *Total Web Requests*<br>
+# steps :
+## 1. *Total Web Requests*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" | stats count AS "Total Web Requests"<br>
    **Explanation**: Select Data from apache web serve log file which contain all HTTP requests<br>
    
@@ -33,7 +33,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/42d3954098ed1d47f0f4c440cc91a7cd3efa3047/Screenshot%20(155).png)
 
 
-2. *Successful Responses*<br>
+## 2. *Successful Responses*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" status 200 | stats count AS "Successful Responses"<br>
    **Explanation**: Filters only GET requests .These are requests where users fetch data (web pages, images, etc.) status=200<br>
     Filters only responses with HTTP status code 200<br>
@@ -44,7 +44,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/60bde24de5fb7585fd44978509351048cfbb239a/Screenshot%20(122).png)
 
 
-3.*Client Error(4xx)*<br>
+## 3.*Client Error(4xx)*<br>
   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" | where status>=400 and status<500 |stats count AS "Client Errors(4xx)"<br>
   **Explanation**: where status>=400 AND status<500 <br>
     Filters only HTTP status codes between 400–499<br>
@@ -54,7 +54,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/ffd7b85cecc6f285d62ac70d7daea07ce14e12cf/Screenshot%20(124).png)
 
 
-4.*client Error(5xx)*<br>
+## 4.*client Error(5xx)*<br>
    **Query**:source="apache_logs.json" host="webserver" sourcetype="_json" | where status>500 |stats count AS "Client Errors(5xx)"<br>
    **Explanation**: Filters HTTP status codes greater than 500<br>
      These are Server Errors (5xx):<br>
@@ -65,7 +65,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/97d7eaaf018d515beae44b0fab05d63850a4849c/Screenshot%20(125).png)
 
-5.*Top Requested URLs*<br>
+## 5.*Top Requested URLs*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json"| stats count AS "Hits" by uri<br>
    **Explanation**: count → counts number of requests<br>
      by uri → groups data by each URL/path<br>
@@ -78,7 +78,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
 
-6.*Top Users by IP Address*<br>
+## 6.*Top Users by IP Address*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" |stats count AS IP by ip<br>
    **Explanation**: count → counts number of requests<br>
     by ip → groups data by each IP address<br>
@@ -87,7 +87,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
   
-7.*Web Traffic By Client IP Address*<br>
+## 7.*Web Traffic By Client IP Address*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" |table ip | iplocation ip | stats count by Country | geom geo_countries featureIdField="Country"<br>
    **Explanation**: Table ip-  Keeps only the IP address field<br>
    | iplocation ip - Converts IP addresses into geographic data<br>
