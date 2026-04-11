@@ -63,8 +63,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
                        503 → Service Unavailable<br>
                       504 → Gateway Timeout<br>
 
-![image alt](![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using Splunk-.-/blob/27003cb4f0b1454ce0461b1d7c5c8d650b020121/Screenshot%20(125).png)
-
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/97d7eaaf018d515beae44b0fab05d63850a4849c/Screenshot%20(125).png)
 
 5.*Top Requested URLs*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json"| stats count AS "Hits" by uri<br>
@@ -72,7 +71,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
      by uri → groups data by each URL/path<br>
      AS "Hits" → renames count column to Hits<br>
      This query groups web requests by URI and counts how many times each page was accessed.<br>
-![image alt](![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
 
 
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/d65c70ff76864f6ff9c542c23eeab7827f0d238a/Screenshot%20(159).png)
