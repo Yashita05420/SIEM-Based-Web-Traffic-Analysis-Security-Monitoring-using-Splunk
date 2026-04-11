@@ -87,7 +87,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
   
-7.*Web Traffic By Client IP Address*
+7.*Web Traffic By Client IP Address*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" |table ip | iplocation ip | stats count by Country | geom geo_countries featureIdField="Country"<br>
    **Explanation**: Table ip-  Keeps only the IP address field<br>
    | iplocation ip - Converts IP addresses into geographic data<br>
