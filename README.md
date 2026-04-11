@@ -51,7 +51,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
     These are called Client Errors (4xx)<br>
     Counts all filtered events and Renames output column to Client Errors (4xx)<br>
 
-
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/ffd7b85cecc6f285d62ac70d7daea07ce14e12cf/Screenshot%20(124).png)
 
 
 4.*client Error(5xx)*<br>
@@ -63,6 +63,8 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
                        503 → Service Unavailable<br>
                       504 → Gateway Timeout<br>
 
+![image alt](![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using Splunk-.-/blob/27003cb4f0b1454ce0461b1d7c5c8d650b020121/Screenshot%20(125).png)
+
 
 5.*Top Requested URLs*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json"| stats count AS "Hits" by uri<br>
@@ -70,6 +72,11 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
      by uri → groups data by each URL/path<br>
      AS "Hits" → renames count column to Hits<br>
      This query groups web requests by URI and counts how many times each page was accessed.<br>
+![image alt](![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
+
+
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/d65c70ff76864f6ff9c542c23eeab7827f0d238a/Screenshot%20(159).png)
+
 
 
 6.*Top Users by IP Address*<br>
@@ -77,8 +84,10 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
    **Explanation**: count → counts number of requests<br>
     by ip → groups data by each IP address<br>
     AS IP → renames the count column to IP<br>
+![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/0e8774a69b02d89978f584f3d6108b2be7f792ad/Screenshot%20(127).png)
 
 
+  
 7.*Web Traffic By Client IP Address*
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" |table ip | iplocation ip | stats count by Country | geom geo_countries featureIdField="Country"<br>
    **Explanation**: Table ip-  Keeps only the IP address field<br>
@@ -88,9 +97,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
                               Counts how many requests came from each country<br>
    | geom geo_countries featureIdField="Country" - Converts data into a world map visualization<br> 
                                                    Matches country names with map boundaries<br>
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/27003cb4f0b1454ce0461b1d7c5c8d650b020121/Screenshot%20(125).png)
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/0e8774a69b02d89978f584f3d6108b2be7f792ad/Screenshot%20(127).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/b09e816492710ee261ef8900b9debab4088a0d63/Screenshot%20(129).png)
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/d65c70ff76864f6ff9c542c23eeab7827f0d238a/Screenshot%20(159).png)
+
+
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/e94b1a4e0629abb2cabed4820aa7ee3e184eec43/Screenshot%20(154).png)
