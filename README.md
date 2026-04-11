@@ -24,7 +24,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 7. Web Traffice by Client IP Address.
 
 
-# steps :
+# Steps :
 ## 1. *Total Web Requests*<br>
    **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" | stats count AS "Total Web Requests"<br>
    **Explanation**: Select Data from apache web serve log file which contain all HTTP requests<br>
