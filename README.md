@@ -51,6 +51,10 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
     These are called Client Errors (4xx)<br>
     Counts all filtered events and Renames output column to Client Errors (4xx)<br>
 
+    ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/770b5816244bcbcf49d465849e0a9a12a77ab78f/Screenshot%20(124).png)
+
+
+
 4.*client Error(5xx)*<br>
    **Query**:source="apache_logs.json" host="webserver" sourcetype="_json" | where status>500 |stats count AS "Client Errors(5xx)"<br>
    **Explanation**: Filters HTTP status codes greater than 500<br>
@@ -85,8 +89,6 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
                               Counts how many requests came from each country<br>
    | geom geo_countries featureIdField="Country" - Converts data into a world map visualization<br> 
                                                    Matches country names with map boundaries<br>
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/e43c82b75f73a5f94ebce81f95d56eaffd41a996/Screenshot%20(123).png)
-![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/770b5816244bcbcf49d465849e0a9a12a77ab78f/Screenshot%20(124).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/27003cb4f0b1454ce0461b1d7c5c8d650b020121/Screenshot%20(125).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/a4299fabf2c1da3937e31cb7093332ad0b23d426/Screenshot%20(126).png)
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/0e8774a69b02d89978f584f3d6108b2be7f792ad/Screenshot%20(127).png)
