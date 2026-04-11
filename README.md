@@ -99,4 +99,5 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/b09e816492710ee261ef8900b9debab4088a0d63/Screenshot%20(129).png)
 
 
+# Final Dashboard
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/e94b1a4e0629abb2cabed4820aa7ee3e184eec43/Screenshot%20(154).png)
