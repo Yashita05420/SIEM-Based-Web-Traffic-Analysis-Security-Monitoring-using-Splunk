@@ -51,7 +51,6 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
     These are called Client Errors (4xx)<br>
     Counts all filtered events and Renames output column to Client Errors (4xx)<br>
 
-    ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/770b5816244bcbcf49d465849e0a9a12a77ab78f/Screenshot%20(124).png)
 
 
 
