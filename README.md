@@ -26,7 +26,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 # Steps :
 ## 1. *Total Web Requests*<br>
-   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" | stats count AS "Total Web Requests"<br>
+     Query: source="apache_logs.json" host="webserver" sourcetype="_json" | stats count AS "Total Web Requests"
    **Explanation**: Select Data from apache web serve log file which contain all HTTP requests<br>
    
 
@@ -34,7 +34,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
 ## 2. *Successful Responses*<br>
-   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" status 200 | stats count AS "Successful Responses"<br>
+     Query: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" status 200 | stats count AS "Successful Responses"
    **Explanation**: Filters only GET requests .These are requests where users fetch data (web pages, images, etc.) status=200<br>
     Filters only responses with HTTP status code 200<br>
     Means: Request was successful<br>
@@ -45,7 +45,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
 ## 3.*Client Error(4xx)*<br>
-  **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" | where status>=400 and status<500 |stats count AS "Client Errors(4xx)"<br>
+    Query: source="apache_logs.json" host="webserver" sourcetype="_json" | where status>=400 and status<500 |stats count AS "Client Errors(4xx)"
   **Explanation**: where status>=400 AND status<500 <br>
     Filters only HTTP status codes between 400–499<br>
     These are called Client Errors (4xx)<br>
@@ -55,7 +55,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
 ## 4.*client Error(5xx)*<br>
-   **Query**:source="apache_logs.json" host="webserver" sourcetype="_json" | where status>500 |stats count AS "Client Errors(5xx)"<br>
+     Query:source="apache_logs.json" host="webserver" sourcetype="_json" | where status>500 |stats count AS "Client Errors(5xx)"
    **Explanation**: Filters HTTP status codes greater than 500<br>
      These are Server Errors (5xx):<br>
                        500 → Internal Server Error<br>
@@ -66,7 +66,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 ![image alt](https://github.com/Yashita05420/SIEM-Based-Web-Traffic-Analysis-Security-Monitoring-using-Splunk-.-/blob/97d7eaaf018d515beae44b0fab05d63850a4849c/Screenshot%20(125).png)
 
 ## 5.*Top Requested URLs*<br>
-   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json"| stats count AS "Hits" by uri<br>
+     Query: source="apache_logs.json" host="webserver" sourcetype="_json"| stats count AS "Hits" by uri
    **Explanation**: count → counts number of requests<br>
      by uri → groups data by each URL/path<br>
      AS "Hits" → renames count column to Hits<br>
@@ -79,7 +79,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
 
 ## 6.*Top Users by IP Address*<br>
-   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" |stats count AS IP by ip<br>
+     Query: source="apache_logs.json" host="webserver" sourcetype="_json" |stats count AS IP by ip
    **Explanation**: count → counts number of requests<br>
     by ip → groups data by each IP address<br>
     AS IP → renames the count column to IP<br>
@@ -88,7 +88,7 @@ This project focus on monitoring and analyzing Web Traffic Logs in Splunk
 
   
 ## 7.*Web Traffic By Client IP Address*<br>
-   **Query**: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" |table ip | iplocation ip | stats count by Country | geom geo_countries featureIdField="Country"<br>
+     Query: source="apache_logs.json" host="webserver" sourcetype="_json" method="GET" |table ip | iplocation ip | stats count by Country | geom geo_countries featureIdField="Country"
    **Explanation**: Table ip-  Keeps only the IP address field<br>
    | iplocation ip - Converts IP addresses into geographic data<br>
                       Adds fields like: Country, City, Latitude / Longitude<br>
